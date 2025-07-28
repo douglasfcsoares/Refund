@@ -14,6 +14,7 @@ amount.oninput = () => {
 
   // Atualiza o valor do input.
   amount.value = formatCurrencyBRL(value);
+  console.log(value);
 };
 
 function formatCurrencyBRL(value) {
