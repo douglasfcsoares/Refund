@@ -136,7 +136,6 @@ function updateTotals() {
 
       // Incrementar o valor total.
       total += Number(value);
-      console.log("🚀 ~ updateTotals ~ total:", total);
     }
 
     // Cria a tag small para adicionar o R$ formatado.
@@ -154,3 +153,18 @@ function updateTotals() {
     alert("Não foi possível atualizar os totais.");
   }
 }
+
+// Evento que captura o clique nos itens da lista.
+expenseList.addEventListener("click", function (event) {
+  // Verifica se o click ocorreu no ícone de remoção.
+  if (event.target.classList.contains("remove-icon")) {
+    // Obtém a li pai do elemento clicado.
+    const item = event.target.closest(".expense");
+
+    // Remove o item da lista.
+    item.remove();
+  }
+
+  // Atualiza os totais da lista.
+  updateTotals();
+});
